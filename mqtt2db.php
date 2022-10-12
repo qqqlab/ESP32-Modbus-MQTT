@@ -1,6 +1,28 @@
 <?php
 //composer php-mqtt/client": "^1.1
 
+/*
+CREATE TABLE `sensor` (
+ `ts` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+ `n` varchar(16) COLLATE latin1_general_ci NOT NULL DEFAULT 'temp1',
+ `t` float DEFAULT NULL,
+ `h` float DEFAULT NULL,
+ `p` float DEFAULT NULL,
+ `v` float DEFAULT NULL,
+ `l` float DEFAULT NULL,
+ `Pout` float DEFAULT NULL,
+ `Etot` float DEFAULT NULL,
+ `HrTot` float DEFAULT NULL,
+ `Eday` float DEFAULT NULL,
+ `HrDay` float DEFAULT NULL,
+ `V1in` float DEFAULT NULL,
+ `Val3` float DEFAULT NULL,
+ `Val37` float DEFAULT NULL,
+ PRIMARY KEY (`ts`,`n`) USING BTREE,
+ KEY `ts` (`ts`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci
+*/
+
 require('vendor/autoload.php');
 
 use \PhpMqtt\Client\MqttClient;
